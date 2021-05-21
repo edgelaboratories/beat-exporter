@@ -64,5 +64,3 @@ release:
   github:
     owner: edgelaboratories
     name: beat-exporter
-  draft: true
-  disable: true
