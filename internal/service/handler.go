@@ -14,7 +14,7 @@ import (
 func SetupServiceListener(stopCh chan<- bool, serviceName string, logger log.StdLogger) error {
 	go func() {
 		sigs := make(chan os.Signal, 1)
-		signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM, syscall.SIGKILL, syscall.SIGHUP)
+		signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM, syscall.SIGHUP)
 		logger.Printf("Signal received: %v", <-sigs)
 		stopCh <- true
 		close(stopCh)

@@ -178,7 +178,10 @@ func IndexHandler(metricsPath string) http.HandlerFunc {
 	index := []byte(fmt.Sprintf(strings.TrimSpace(indexHTML), metricsPath))
 
 	return func(w http.ResponseWriter, r *http.Request) {
-		w.Write(index)
+		_, err := w.Write(index)
+		if err != nil {
+			log.Errorf("Can't write the index: %s", err)
+		}
 	}
 }
 
