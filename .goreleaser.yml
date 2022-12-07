@@ -43,9 +43,9 @@ dockers:
     goos: linux
     goarch: amd64
     image_templates:
-      - edgelab/beat-exporter:latest
-      - edgelab/beat-exporter:v{{ .Tag }}
-      - edgelab/beat-exporter:v{{ .Major }}
+      - ghcr.io/edgelaboratories/beat-exporter:latest
+      - ghcr.io/edgelaboratories/beat-exporter:v{{ .Tag }}
+      - ghcr.io/edgelaboratories/beat-exporter:v{{ .Major }}
     build_flag_templates:
     - "--pull"
     - "--label=org.opencontainers.image.created={{ .Date }}"
